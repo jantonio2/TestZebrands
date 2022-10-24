@@ -1,2 +1,1 @@
-export { RepositoriesPage } from './RepositoriesPage';
-export { UserPage } from './UserPage';
+export { GenericPage } from './GenericPage';

@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
-import { UserPage, RepositoriesPage } from '../pages';
+import { GenericPage } from '../pages';
 import { Navbar } from '../components';
 
 export const AppRouter = () => {
@@ -7,8 +7,8 @@ export const AppRouter = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="users" element= { <UserPage /> } />
-        <Route path="repositories" element= { <RepositoriesPage /> } />
+        <Route path="users" element= { <GenericPage title="users" /> } />
+        <Route path="repositories" element= { <GenericPage title="repositories" /> } />
         
         <Route path="/*" element= { <Navigate to="users" /> } />
       </Routes>
