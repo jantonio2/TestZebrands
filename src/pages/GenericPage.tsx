@@ -1,6 +1,5 @@
 import { Title } from '../styles/pageStyle'
-import { SearchInput, UserList } from '../components';
-
+import { SearchInput, UserList, RepositoriesList } from '../components';
 interface GenericPageProps {
   title: string;
 }
@@ -12,7 +11,8 @@ export const GenericPage = ({ title }: GenericPageProps) => {
 
       <SearchInput />
 
-      <UserList />  
+      {/* <UserList />   */}
+      <RepositoriesList />  
     </div>
   )
 }
