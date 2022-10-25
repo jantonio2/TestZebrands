@@ -8,8 +8,10 @@ interface MenuProps {
 export const Nav = styled.nav`
   background-color: #1F1F1F;
   height: 85px;
-  position: relative;
+  position: fixed;
+  top: 0px;
   width: 100%;
+  z-index: 999;
 `
 
 export const Container = styled.div`
@@ -27,8 +29,15 @@ export const Container = styled.div`
 export const Logo = styled.div`
   /* cursor: pointer; */
   margin-left: 60px;
+  transition: 0.5s all ease;
   width: 150px;
   z-index: 100;
+
+  @media (max-width: 400px) {
+    margin-left: 30px;
+    transition: 0.5s all ease;
+    width: 100px;
+  }
 `
 
 export const Menu = styled.ul<MenuProps>`

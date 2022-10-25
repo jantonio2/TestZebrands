@@ -1,5 +1,5 @@
 import { Title } from '../styles/pageStyle'
-import { SearchInput } from '../components/SearchInput';
+import { SearchInput, UserList } from '../components';
 
 interface GenericPageProps {
   title: string;
@@ -11,6 +11,8 @@ export const GenericPage = ({ title }: GenericPageProps) => {
       <Title>{ title.toUpperCase() }</Title>
 
       <SearchInput />
+
+      <UserList />  
     </div>
   )
 }
