@@ -1,5 +1,5 @@
 
-import { GridCard } from '../../styles/userCardStyle';
+import { GridUserCard } from '../../styles/userCardStyle';
 import { UserCardResult } from './UserCardResult';
 
 export interface User {
@@ -21,7 +21,7 @@ export const UserList = () => {
   }
 
   return (
-    <GridCard>
+    <GridUserCard>
       <UserCardResult user={ user } />
       <UserCardResult user={ user } />
       <UserCardResult user={ user } />
@@ -36,6 +36,6 @@ export const UserList = () => {
       <UserCardResult user={ user } />
       <UserCardResult user={ user } />
       <UserCardResult user={ user } />
-    </GridCard>
+    </GridUserCard>
   )
 }

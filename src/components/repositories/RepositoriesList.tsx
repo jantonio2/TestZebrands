@@ -1,4 +1,5 @@
 import { RepositoriesCardResult } from './RepositoriesCardResult';
+import { GridRepositorieCard } from '../../styles/repositorieCardStyle';
 
 export const RepositoriesList = () => {
 
@@ -28,6 +29,15 @@ export const RepositoriesList = () => {
   }
 
   return (
-    <RepositoriesCardResult repositorie={ repositorie } />
+    <GridRepositorieCard>
+      <RepositoriesCardResult repositorie={ repositorie } />
+      <RepositoriesCardResult repositorie={ repositorie } />
+      <RepositoriesCardResult repositorie={ repositorie } />
+      <RepositoriesCardResult repositorie={ repositorie } />
+      <RepositoriesCardResult repositorie={ repositorie } />
+      <RepositoriesCardResult repositorie={ repositorie } />
+      <RepositoriesCardResult repositorie={ repositorie } />
+      <RepositoriesCardResult repositorie={ repositorie } />
+    </GridRepositorieCard>
   )
 }

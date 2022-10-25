@@ -9,5 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body{
     /* overflow: hidden; */
+    background: #E9E9E9;
   }
 `

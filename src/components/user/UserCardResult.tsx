@@ -1,4 +1,4 @@
-import { Card, Detail, Details, DetailText, Image, Name, OutLink } from '../../styles/userCardStyle';
+import { UserCard, UserDetail, UserDetails, UserDetailText, UserImage, UserName, OutLink } from '../../styles/userCardStyle';
 
 
 // 
@@ -6,24 +6,24 @@ export const UserCardResult = ({ user }: any ) => {
   console.log(user)
   console.log(user.avatar_url)
   return (
-    <Card>
-      <Image src={ user.avatar_url } alt="Profile" />
-      <Name>{ user.login }</Name>
+    <UserCard>
+      <UserImage src={ user.avatar_url } alt="Profile" />
+      <UserName>{ user.login }</UserName>
       
-      <Details>
-        <Detail>
+      <UserDetails>
+        <UserDetail>
           <div>5</div>
-          <DetailText>Repositories</DetailText>
-        </Detail>
-        <Detail>
+          <UserDetailText>Repositories</UserDetailText>
+        </UserDetail>
+        <UserDetail>
           <div>30</div>
-          <DetailText>Followers</DetailText>
-        </Detail>
-        <Detail>
+          <UserDetailText>Followers</UserDetailText>
+        </UserDetail>
+        <UserDetail>
           <OutLink />
-          <DetailText>Link</DetailText>
-        </Detail>
-      </Details>
-    </Card>
+          <UserDetailText>Link</UserDetailText>
+        </UserDetail>
+      </UserDetails>
+    </UserCard>
   )
 }

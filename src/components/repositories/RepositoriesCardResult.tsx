@@ -1,41 +1,43 @@
+import { FaCopy, FaEye, FaStar } from 'react-icons/fa';
+import { RepositorieCard, RepositorieHeaderCard, RepositorieContent, RepositorieTopics, RepositorieBody, RepositorieBodyOwner, RepositorieDetails, RepositorieDetail } from '../../styles/repositorieCardStyle';
 
 export const RepositoriesCardResult = ({ repositorie }: any) => {
   console.log(repositorie);
   return (
-    <div className='Card'>
-      <div className='HeaderCard'>
+    <RepositorieCard>
+      <RepositorieHeaderCard>
         <img src={ repositorie.owner.avatar_url } alt="Profile" />
         <div>{ repositorie.name }</div>
-      </div>
+      </RepositorieHeaderCard>
 
-      <div className='Content'>
-        <div className='Topics'>
+      <RepositorieContent>
+        <RepositorieTopics>
           {
             repositorie.topics.map((topic: any) =>
               <div className='topic'> { topic } </div>
             )
           }
-        </div>
-        <div className='Body'>
-          <div className='Owner'>{ repositorie.owner.login }</div>
-          <div className='Description'> { repositorie.description } </div>
-        </div>
+        </RepositorieTopics>
+        <RepositorieBody>
+          <RepositorieBodyOwner>{ repositorie.owner.login }</RepositorieBodyOwner>
+          <div> { repositorie.description } </div>
+        </RepositorieBody>
 
-        <div className='Details'>
-          <div className='Detail'>
+        <RepositorieDetails>
+          <RepositorieDetail>
+            <FaStar />
             <div>{ repositorie.stargazers_count }</div>
-            <div>icon</div>
-          </div>
-          <div className='Detail'>
+          </RepositorieDetail>
+          <RepositorieDetail>
+            <FaEye />
             <div>{ repositorie.watchers }</div>
-            <div>icon</div>
-          </div>
-          <div className='Detail'>
+          </RepositorieDetail>
+          <RepositorieDetail>
+            <FaCopy />
             <div>{ repositorie.forks }</div>
-            <div>icon</div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </RepositorieDetail>
+        </RepositorieDetails>
+      </RepositorieContent>
+    </RepositorieCard>
   )
 }
