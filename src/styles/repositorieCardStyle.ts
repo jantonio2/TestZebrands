@@ -46,7 +46,7 @@ export const RepositorieHeaderCard = styled.div`
 export const RepositorieContent = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 35px;
 `
 
 export const RepositorieTopics = styled.div`
