@@ -1,4 +1,11 @@
+
 export interface User {
+  total_count:        number;
+  incomplete_results: boolean;
+  items:              Item[];
+}
+
+export interface Item {
   login:               string;
   id:                  number;
   node_id:             string;
@@ -17,18 +24,5 @@ export interface User {
   received_events_url: string;
   type:                string;
   site_admin:          boolean;
-  name:                string;
-  company:             string;
-  blog:                string;
-  location:            string;
-  email:               string | null;
-  hireable:            string | null;
-  bio:                 string;
-  twitter_username:    string;
-  public_repos:        number;
-  public_gists:        number;
-  followers:           number;
-  following:           number;
-  created_at:          Date;
-  updated_at:          Date;
+  score:               number;
 }

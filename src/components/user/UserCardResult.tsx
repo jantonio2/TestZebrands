@@ -1,4 +1,4 @@
-import { UserCard, UserDetail, UserDetails, UserDetailText, UserImage, UserName, OutLink } from '../../styles/userCardStyle';
+import { UserCard, UserDetail, UserDetails, UserDetailText, UserImage, UserName } from '../../styles/userCardStyle';
 
 
 // 
@@ -20,8 +20,8 @@ export const UserCardResult = ({ user }: any ) => {
           <UserDetailText>Followers</UserDetailText>
         </UserDetail>
         <UserDetail>
-          <OutLink />
-          <UserDetailText>Link</UserDetailText>
+          <div>35</div>
+          <UserDetailText>Following</UserDetailText>
         </UserDetail>
       </UserDetails>
     </UserCard>
