@@ -1,7 +1,7 @@
 import { RepositoriesContext } from './RepositoriesContext';
 
 
-interface RepositoriesState {
+export interface RepositoriesState {
   isLoading: boolean;
 }
 

@@ -1,6 +1,6 @@
 import { UsersContext } from './UsersContext';
 
-interface UsersState {
+export interface UsersState {
   isLoading: boolean;
 }
 

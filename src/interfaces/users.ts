@@ -1,5 +1,5 @@
 
-export interface User {
+export interface Users {
   total_count:        number;
   incomplete_results: boolean;
   items:              Item[];

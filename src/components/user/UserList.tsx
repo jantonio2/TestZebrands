@@ -2,17 +2,10 @@
 import { GridUserCard } from '../../styles/userCardStyle';
 import { UserCardResult } from './UserCardResult';
 
-export interface User {
-  login: string;
-  avatar_url: string;
-  html_url: string;
-  followers_url: string;
-  repos_url: string;
-}
 
 export const UserList = () => {
 
-  const user: User = {
+  const user = {
     login: "jantonio2",
     avatar_url: "https://avatars.githubusercontent.com/u/48572583?v=4",
     html_url: "https://github.com/jantonio2",
