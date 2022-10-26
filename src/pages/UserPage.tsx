@@ -9,6 +9,7 @@ export const UserPage = () => {
   const debounceRef = useRef<NodeJS.Timeout>();
   const { searchUsersByTerm } = useContext(UsersContext)
 
+  // Function debounce for search input
   const onQueryChanged = (event: ChangeEvent<HTMLInputElement>) => {
     if (debounceRef.current) 
       clearTimeout(debounceRef.current);

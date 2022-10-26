@@ -1,6 +1,5 @@
 import { UsersState } from './UsersProvider';
 import { Users } from '../../interfaces/users';
-import { User } from '../../interfaces/user';
 
 type UsersAction = 
   | { type: 'setLoadingUsers' }

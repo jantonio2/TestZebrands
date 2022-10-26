@@ -1,4 +1,3 @@
-import { User } from './user';
 
 export interface MainUser {
   total_count:        number;
@@ -25,6 +24,5 @@ export interface Users {
   received_events_url: string;
   type:                string;
   site_admin:          boolean;
-  score:               number;
-  user:                User | undefined; 
+  score:               number; 
 }

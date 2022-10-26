@@ -4,21 +4,21 @@ import { GridUserCard } from '../../styles/userCardStyle';
 import { UserCardResult } from './UserCardResult';
 import { UsersContext } from '../../context/users/UsersContext';
 import { Users } from '../../interfaces/users';
+import { LoadingPage } from '../LoadingPage';
 
 
 export const UserList = () => {
 
+  // isLoading refers to if the process of requesting data from Github Api is completed
+  // users has the data list
   const { isLoading, users } = useContext(UsersContext);
-  console.log(users)
   
-  
+  // if the request is not complete yet shows a LoadingPage
   if (isLoading) {
-    return <>
-      <h6>Buscando</h6>
-      <p>Espere por favor...</p>
-    </>;
+    return <LoadingPage />
   }
   
+  // if there are not result or the search input is empty shows a empty page 
   if ( users.length === 0 ){
     return <></>
   }

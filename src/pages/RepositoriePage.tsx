@@ -9,6 +9,7 @@ export const RepositoriePage = () => {
   const debounceRef = useRef<NodeJS.Timeout>();
   const { searchRepositoriesByTerm } = useContext(RepositoriesContext)
 
+  // Function debounce for search input
   const onQueryChanged = (event: ChangeEvent<HTMLInputElement>) => {
     if (debounceRef.current) 
       clearTimeout(debounceRef.current);

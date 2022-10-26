@@ -23,6 +23,7 @@ export const RepositoriesProvider = ({ children }: Props) => {
   
   const [state, dispatch] = useReducer(repositoriesReducer, INITIAL_STATE);
 
+   // Function that loads data on the repositorie context
   const searchRepositoriesByTerm = async( query: string ): Promise<Repositories[]> => {
     
 

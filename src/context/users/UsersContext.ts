@@ -1,7 +1,5 @@
 import { createContext } from 'react';
-import { User } from '../../interfaces/user';
 import { Users } from '../../interfaces/users';
-
 interface UsersContextProps {
   isLoading: boolean;
   users: Users[];

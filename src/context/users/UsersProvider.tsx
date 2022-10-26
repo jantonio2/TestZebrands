@@ -3,8 +3,6 @@ import { UsersContext } from './UsersContext';
 import { MainUser, Users } from '../../interfaces/users';
 import { usersReducer } from './usersReducer';
 import searchApi from '../../api/searchApi';
-import { User } from '../../interfaces/user';
-import userApi from '../../api/userApi';
 
 export interface UsersState {
   isLoading: boolean;
@@ -24,6 +22,7 @@ export const UsersProvider = ({ children }: Props) => {
 
   const [state, dispatch] = useReducer(usersReducer, INITIAL_STATE);
 
+  // Function that loads data on the user context
   const searchUsersByTerm = async( query: string ): Promise<Users[]> => {
 
     if ( query.length === 0 ) {
@@ -42,14 +41,6 @@ export const UsersProvider = ({ children }: Props) => {
     dispatch({ type: 'setUsers', payload: resp.data.items });
 
     return resp.data.items;
-
-  }
-
-  const searchUser = async( query: string ): Promise<User> => {
-
-    const resp = await userApi.get<User>(`/${ query }`, {});
-
-    return resp.data;
 
   }
 

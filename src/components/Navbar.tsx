@@ -5,6 +5,7 @@ import logo from '../assets/imagotipo.svg'
 
 export const Navbar = () => {
 
+  // This state is for responsive navbar
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   return (
