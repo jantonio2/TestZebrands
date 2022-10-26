@@ -1,16 +1,19 @@
 import { UserCard, UserDetail, UserDetails, UserDetailText, UserImage, UserName } from '../../styles/userCardStyle';
+import { Users } from '../../interfaces/users';
 
+interface UserProps {
+  data: Users;
+}
 
-// 
-export const UserCardResult = ({ user }: any ) => {
-  console.log(user)
-  console.log(user.avatar_url)
+export const UserCardResult = ( { data }: UserProps ) => {
   return (
     <UserCard>
-      <UserImage src={ user.avatar_url } alt="Profile" />
-      <UserName>{ user.login }</UserName>
+      <a href={ data.html_url } target="_blank">
+        <UserImage src={ data.avatar_url } alt="Profile" />
+      </a>
+      <UserName>{ data.login }</UserName>
       
-      <UserDetails>
+      {/* <UserDetails>
         <UserDetail>
           <div>5</div>
           <UserDetailText>Repositories</UserDetailText>
@@ -23,7 +26,7 @@ export const UserCardResult = ({ user }: any ) => {
           <div>35</div>
           <UserDetailText>Following</UserDetailText>
         </UserDetail>
-      </UserDetails>
+      </UserDetails> */}
     </UserCard>
   )
 }

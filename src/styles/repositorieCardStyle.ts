@@ -5,8 +5,7 @@ export const GridRepositorieCard = styled.section`
   flex-wrap: wrap;
   gap: 50px;
   justify-content: space-evenly;
-  margin: auto;
-  margin-top: 75px;
+  margin: 75px auto;
   max-width: 1440px;
 `
 
@@ -27,9 +26,11 @@ export const RepositorieHeaderCard = styled.div`
   display: flex;
   justify-content: space-evenly;
 
-  div {
+  a {
+    color: #C1D9D0;
     font-weight: bold;
     font-size: 26px;
+    text-decoration: none;
   }
 
   img {
@@ -60,6 +61,10 @@ export const RepositorieTopics = styled.div`
     padding: 1px 5px;
     margin: 3px;
     border-radius: 10px;
+  }
+  
+  i {
+    margin: auto;
   }
 `
 

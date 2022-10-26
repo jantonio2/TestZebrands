@@ -1,11 +1,11 @@
 
-export interface Repositorie {
+export interface MainRepositorie {
   total_count:        number;
   incomplete_results: boolean;
-  items:              Item[];
+  items:              Repositories[];
 }
 
-export interface Item {
+export interface Repositories {
   id:                          number;
   node_id:                     string;
   name:                        string;

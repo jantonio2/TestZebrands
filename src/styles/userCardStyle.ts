@@ -6,8 +6,7 @@ export const GridUserCard = styled.section`
   flex-wrap: wrap;
   gap: 50px;
   justify-content: space-evenly;
-  margin: auto;
-  margin-top: 75px;
+  margin: 75px auto;
   max-width: 1440px;
 `
 

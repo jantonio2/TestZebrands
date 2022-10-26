@@ -1,11 +1,11 @@
 
-export interface Users {
+export interface MainUser {
   total_count:        number;
   incomplete_results: boolean;
-  items:              Item[];
+  items:              Users[];
 }
 
-export interface Item {
+export interface Users {
   login:               string;
   id:                  number;
   node_id:             string;

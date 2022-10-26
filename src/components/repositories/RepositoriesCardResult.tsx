@@ -1,40 +1,58 @@
 import { FaCopy, FaEye, FaStar } from 'react-icons/fa';
+import { Repositories } from '../../interfaces/repositorie';
 import { RepositorieCard, RepositorieHeaderCard, RepositorieContent, RepositorieTopics, RepositorieBody, RepositorieBodyOwner, RepositorieDetails, RepositorieDetail } from '../../styles/repositorieCardStyle';
 
-export const RepositoriesCardResult = ({ repositorie }: any) => {
-  console.log(repositorie);
+interface RepositoriesProps {
+  data: Repositories;
+}
+
+export const RepositoriesCardResult = ({ data }: RepositoriesProps) => {
+
   return (
     <RepositorieCard>
       <RepositorieHeaderCard>
-        <img src={ repositorie.owner.avatar_url } alt="Profile" />
-        <div>{ repositorie.name }</div>
+        <a href={ data.owner.html_url } target="_blank">
+          <img src={ data.owner.avatar_url } alt="Profile" />
+        </a>
+        <a href={ data.html_url } target="_blank">
+          <div>{ data.name }</div> 
+        </a>
       </RepositorieHeaderCard>
 
       <RepositorieContent>
         <RepositorieTopics>
           {
-            repositorie.topics.map((topic: any) =>
-              <div className='topic'> { topic } </div>
+            (data.topics.length > 0)
+            ?
+            data.topics.map((topic: string) =>
+              <div
+                key={ topic }
+                className='topic'
+              > 
+                { topic } 
+              </div>
             )
+            :
+            <i>Sin etiquetas</i>
           }
         </RepositorieTopics>
         <RepositorieBody>
-          <RepositorieBodyOwner>{ repositorie.owner.login }</RepositorieBodyOwner>
-          <div> { repositorie.description } </div>
+          <RepositorieBodyOwner>{ data.owner.login }</RepositorieBodyOwner>
+          <div> { data.description } </div>
         </RepositorieBody>
 
         <RepositorieDetails>
           <RepositorieDetail>
             <FaStar />
-            <div>{ repositorie.stargazers_count }</div>
+            <div>{ data.stargazers_count }</div>
           </RepositorieDetail>
           <RepositorieDetail>
             <FaEye />
-            <div>{ repositorie.watchers }</div>
+            <div>{ data.watchers }</div>
           </RepositorieDetail>
           <RepositorieDetail>
             <FaCopy />
-            <div>{ repositorie.forks }</div>
+            <div>{ data.forks }</div>
           </RepositorieDetail>
         </RepositorieDetails>
       </RepositorieContent>
