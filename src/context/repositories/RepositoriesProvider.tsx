@@ -11,7 +11,7 @@ export interface RepositoriesState {
 }
 
 const INITIAL_STATE: RepositoriesState = {
-  isLoading: true,
+  isLoading: false,
   repositories: []
 }
 

@@ -1,3 +1,4 @@
+import { User } from './user';
 
 export interface MainUser {
   total_count:        number;
@@ -25,4 +26,5 @@ export interface Users {
   type:                string;
   site_admin:          boolean;
   score:               number;
+  user:                User | undefined; 
 }

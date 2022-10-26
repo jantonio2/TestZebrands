@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { GridUserCard } from '../../styles/userCardStyle';
 import { UserCardResult } from './UserCardResult';
@@ -9,19 +9,20 @@ import { Users } from '../../interfaces/users';
 export const UserList = () => {
 
   const { isLoading, users } = useContext(UsersContext);
-
-  console.log(isLoading)
+  console.log(users)
   
-  if ( users.length === 0 ){
-    return <></>
-  }
-
+  
   if (isLoading) {
     return <>
       <h6>Buscando</h6>
       <p>Espere por favor...</p>
     </>;
   }
+  
+  if ( users.length === 0 ){
+    return <></>
+  }
+
 
   return (
     <GridUserCard>
@@ -29,7 +30,7 @@ export const UserList = () => {
         users.map( (user: Users) => (
           <UserCardResult 
             key={ user.id }
-            data = { user } 
+            data = { user }
           />
         ))
       }

@@ -4,9 +4,7 @@ import { User } from '../../interfaces/user';
 
 type UsersAction = 
   | { type: 'setLoadingUsers' }
-  | { type: 'setLoadingDetailsUser' }
   | { type: 'setUsers', payload: Users[] }
-  | { type: 'setDetailUser', payload?: User }
 
 export const usersReducer = ( state: UsersState, action: UsersAction  ): UsersState => {
   switch ( action.type ) {
@@ -24,21 +22,7 @@ export const usersReducer = ( state: UsersState, action: UsersAction  ): UsersSt
 
         isLoading: true,
         users: []
-      }
-
-    case 'setDetailUser':
-      return {
-        ...state,
-
-        isLoadingDetail: false,
-        userDetail: action.payload
-      }  
-
-    case 'setLoadingDetailsUser':
-      return {
-        ...state,
-        isLoadingDetail: true,
-      }
+      } 
   
     default:
       return state;

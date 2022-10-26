@@ -9,14 +9,11 @@ import userApi from '../../api/userApi';
 export interface UsersState {
   isLoading: boolean;
   users: Users[];
-  isLoadingDetail: boolean;
-  userDetail?: User;
 }
 
 const INITIAL_STATE: UsersState = {
-  isLoading: true,
+  isLoading: false,
   users: [],
-  isLoadingDetail: true,
 }
 
 interface Props {
@@ -43,21 +40,15 @@ export const UsersProvider = ({ children }: Props) => {
     });
 
     dispatch({ type: 'setUsers', payload: resp.data.items });
+
     return resp.data.items;
 
   }
 
   const searchUser = async( query: string ): Promise<User> => {
 
-    if ( query.length === 0 ) {
-      dispatch({ type: 'setDetailUser' });
-      // return {};
-    }
-    dispatch({ type: 'setLoadingDetailsUser' });
-
     const resp = await userApi.get<User>(`/${ query }`, {});
 
-    dispatch({ type: 'setDetailUser', payload: resp.data });
     return resp.data;
 
   }
@@ -66,8 +57,7 @@ export const UsersProvider = ({ children }: Props) => {
     <UsersContext.Provider value={{
       ...state,
       // Methods
-      searchUsersByTerm,
-      searchUser
+      searchUsersByTerm
     }}>
       { children }
     </UsersContext.Provider>

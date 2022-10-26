@@ -37,6 +37,10 @@ export const UserName = styled.div`
   font-weight: bold;
 `
 
+export const NickName = styled.div`
+  font-size: 1.2em;
+`
+
 export const UserDetails = styled.div`
   display: flex;
   justify-content: space-evenly;

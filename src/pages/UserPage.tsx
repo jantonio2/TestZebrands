@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef, useContext } from 'react';
+import { ChangeEvent, useRef, useContext, useEffect } from 'react';
 import { UserList } from '../components'
 import { UsersContext } from '../context';
 import { Title } from '../styles/pageStyle'
@@ -17,6 +17,7 @@ export const UserPage = () => {
       searchUsersByTerm( event.target.value );
     }, 500);
   }
+  
 
   return (
     <div>
